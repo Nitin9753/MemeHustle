@@ -19,6 +19,36 @@ npm run dev
 npm run build
 ```
 
+## Environment Variables
+
+The application uses the following environment variables:
+
+- `VITE_API_URL`: The URL of your backend API
+
+You can set these variables in a `.env` file during development:
+```
+VITE_API_URL=http://localhost:5000/api
+```
+
+For production, you can set them in your hosting platform (e.g., Vercel).
+
+## Deployment to Vercel
+
+1. Push your code to a GitHub repository
+
+2. Create a new project in Vercel and connect to your repository
+
+3. Configure the following settings:
+   - Framework Preset: Vite
+   - Root Directory: `app/frontend` (or `.` if deploying only the frontend)
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+
+4. Add environment variables in Vercel project settings:
+   - `VITE_API_URL`: URL of your backend API (e.g., `https://your-backend-api.vercel.app/api`)
+
+5. Deploy!
+
 ## Features
 
 - **Meme Gallery**: Browse and vote on memes
@@ -37,6 +67,7 @@ npm run build
 
 ## Notes
 
-- The frontend assumes the backend API is running on `http://localhost:5000`
+- The frontend connects to the backend API using the URL specified in `VITE_API_URL` environment variable
+- If no environment variable is provided, it defaults to `/api` in production and `http://localhost:5000/api` in development
 - Mock authentication is implemented with hardcoded users
 - For the grid background, replace `grid-bg.png` with an actual cyberpunk grid pattern image

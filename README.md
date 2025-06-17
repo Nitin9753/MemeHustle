@@ -95,12 +95,48 @@ npm run dev
 
 ## Deployment
 
+### Building for Production
+
 1. Build the frontend:
 ```bash
 cd frontend && npm run build
 ```
 
-2. Deploy the backend and frontend to your preferred hosting service (e.g., Vercel, Render)
+### Vercel Deployment
+
+#### Frontend Deployment
+
+1. Push your code to a GitHub repository
+2. Create a new project in Vercel and connect to your repository
+3. Configure the following settings:
+   - Framework Preset: Vite
+   - Root Directory: `app/frontend`
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+4. Add the following environment variables in Vercel project settings:
+   - `VITE_API_URL`: URL of your backend API (e.g., `https://your-backend-api.vercel.app/api`)
+
+#### Backend Deployment
+
+1. Create another project in Vercel for the backend
+2. Connect to the same repository
+3. Configure the following settings:
+   - Framework Preset: Node.js
+   - Root Directory: `app/backend`
+   - Build Command: `npm install`
+   - Output Directory: `.`
+4. Add the following environment variables:
+   - `SUPABASE_URL`: Your Supabase URL
+   - `SUPABASE_KEY`: Your Supabase anon key
+   - `GEMINI_API_KEY`: Your Google Gemini API key
+   - `PORT`: 8080 (Vercel defaults to this port)
+
+#### Alternative: Single Project Deployment
+
+For simpler deployment, you can:
+1. Move your backend code to `/api` directory in your frontend project
+2. Deploy only the frontend project to Vercel
+3. Vercel will automatically handle API routes in the `/api` directory
 
 ## Notes
 

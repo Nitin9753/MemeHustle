@@ -27,6 +27,26 @@ GEMINI_API_KEY=your_gemini_api_key
 npm run dev
 ```
 
+## Deployment to Vercel
+
+1. Push your code to a GitHub repository
+
+2. Create a new project in Vercel and connect to your repository
+
+3. Configure the following settings:
+   - Framework Preset: Node.js
+   - Root Directory: `app/backend` (or `.` if deploying only the backend)
+   - Build Command: `npm install`
+   - Output Directory: `.`
+
+4. Add the following environment variables in Vercel project settings:
+   - `SUPABASE_URL`: Your Supabase URL
+   - `SUPABASE_KEY`: Your Supabase anon key
+   - `GEMINI_API_KEY`: Your Google Gemini API key
+   - `PORT`: 5000 (Vercel defaults to this port)
+
+5. Deploy!
+
 ## API Endpoints
 
 ### Memes
