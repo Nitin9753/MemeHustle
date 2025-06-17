@@ -6,9 +6,6 @@
   body {
     @apply bg-cyber-black text-white;
     font-family: 'Courier New', monospace;
-    background-image: 
-      linear-gradient(to bottom, rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.9)),
-      url('/grid-bg.png');
     background-size: cover;
     background-attachment: fixed;
   }
