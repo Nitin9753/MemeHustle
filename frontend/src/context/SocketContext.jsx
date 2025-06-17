@@ -16,8 +16,13 @@ export const SocketProvider = ({ children }) => {
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
+    // Determine socket URL from environment variables
+    // Format: VITE_SOCKET_URL should be without protocol (e.g. "your-backend.vercel.app")
+    const socketUrl = import.meta.env.VITE_SOCKET_URL || 
+                     (import.meta.env.PROD ? undefined : 'http://localhost:5000');
+    
     // Create socket connection
-    const socketInstance = io(import.meta.env.PROD ? undefined : 'http://localhost:5000', {
+    const socketInstance = io(socketUrl, {
       transports: ['websocket'],
     });
 

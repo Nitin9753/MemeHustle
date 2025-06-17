@@ -24,10 +24,12 @@ npm run build
 The application uses the following environment variables:
 
 - `VITE_API_URL`: The URL of your backend API
+- `VITE_SOCKET_URL`: The URL of your WebSocket server (without protocol, e.g., `your-backend.vercel.app`)
 
 You can set these variables in a `.env` file during development:
 ```
 VITE_API_URL=http://localhost:5000/api
+VITE_SOCKET_URL=http://localhost:5000
 ```
 
 For production, you can set them in your hosting platform (e.g., Vercel).

@@ -115,6 +115,7 @@ cd frontend && npm run build
    - Output Directory: `dist`
 4. Add the following environment variables in Vercel project settings:
    - `VITE_API_URL`: URL of your backend API (e.g., `https://your-backend-api.vercel.app/api`)
+   - `VITE_SOCKET_URL`: URL of your WebSocket server (without protocol, e.g., `your-backend-api.vercel.app`)
 
 #### Backend Deployment
 
@@ -129,7 +130,7 @@ cd frontend && npm run build
    - `SUPABASE_URL`: Your Supabase URL
    - `SUPABASE_KEY`: Your Supabase anon key
    - `GEMINI_API_KEY`: Your Google Gemini API key
-   - `PORT`: 8080 (Vercel defaults to this port)
+   - `PORT`: 5000 (Vercel defaults to this port)
 
 #### Alternative: Single Project Deployment
 
